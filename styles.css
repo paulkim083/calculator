@@ -1,9 +1,18 @@
+:root {
+    --white-space: rgb(212, 212, 203);
+    --font-color: rgb(255, 255, 255);
+    --calculator-color: rgb(79, 79, 124);
+    --button-color: black;
+    --display-color: black;
+}
+
 div {
-    border: 1px solid;
+    
     font-weight: 700;
     font-size: 1.5rem;
-    border: 3px solid;
     border-radius: 8px;
+    background-color: var(--button-color);
+    color: var(--font-color);
 }
 
 .body {
@@ -11,12 +20,13 @@ div {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgb(212, 212, 203);
+    background-color: var(--white-space);
 }
 
 .container {
     width: 380px;
     height: 550px;
+    border: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(7, 1fr);
@@ -28,11 +38,17 @@ div {
     "four five six multiply"
     "one two three subtract"
     "decimal zero equal add";
-    grid-gap: 1em;
+    grid-gap: 0.5em;
     padding: 1em;
+    background-color: var(--calculator-color);
 }
 
-.display {grid-area: display;}
+.display {
+    grid-area: display;
+    border: 0;
+    background-color: var(--white-space);    
+    color: var(--display-color);
+}
 
 .clear {grid-area: clear;}
 
@@ -82,4 +98,23 @@ div {
     align-items: flex-end;
 }
 
+.container .operation {
+    background-color: rgb(236, 99, 19);
+    font-size: 2rem;
+}
 
+.container .equal {
+    background-color:rgba(212, 182, 182, 0.774);
+    color: black;
+    font-size: 3rem;
+}
+
+.container .clear {
+    background-color: rgb(65, 66, 60);
+    text-transform: uppercase;
+}
+
+.container .delete {
+    text-transform: uppercase;
+    background-color:rgb(85, 8, 32)
+}
